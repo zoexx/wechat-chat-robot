@@ -4,7 +4,7 @@
   "description": "a wechat robot base on wechaty",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build:live",
+    "start": "ts-node index.ts",
     "build:live": "nodemon --exec ts-node -- ./index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
