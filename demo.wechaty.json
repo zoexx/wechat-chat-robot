@@ -1,0 +1,127 @@
+[
+    {
+        "domain": ".qq.com",
+        "expiry": 2147385600,
+        "httpOnly": false,
+        "name": "pgv_pvi",
+        "path": "/",
+        "secure": false,
+        "value": "4842618880"
+    },
+    {
+        "domain": ".qq.com",
+        "httpOnly": false,
+        "name": "pgv_si",
+        "path": "/",
+        "secure": false,
+        "value": "s656439296"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1811752863,
+        "httpOnly": false,
+        "name": "webwxuvid",
+        "path": "/",
+        "secure": false,
+        "value": "b30b28a483c3856d9c24ccbabcd73f2add2b4bc35eede8ced1898d3e1e87df56ee3cfc0cab6c9fce118f2e3b6bcfee5c"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1496436064,
+        "httpOnly": false,
+        "name": "wxpluginkey",
+        "path": "/",
+        "secure": false,
+        "value": "1496392709"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1496566072,
+        "httpOnly": false,
+        "name": "last_wxuin",
+        "path": "/",
+        "secure": false,
+        "value": "330699621"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1496566072,
+        "httpOnly": false,
+        "name": "login_frequency",
+        "path": "/",
+        "secure": false,
+        "value": "1"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1496444553,
+        "httpOnly": false,
+        "name": "wxuin",
+        "path": "/",
+        "secure": false,
+        "value": "330699621"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1496444553,
+        "httpOnly": false,
+        "name": "wxsid",
+        "path": "/",
+        "secure": false,
+        "value": "Djg5xUsQUXLNBLAP"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1496444553,
+        "httpOnly": false,
+        "name": "wxloadtime",
+        "path": "/",
+        "secure": false,
+        "value": "1496401353"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1496444553,
+        "httpOnly": false,
+        "name": "mm_lang",
+        "path": "/",
+        "secure": false,
+        "value": "zh_CN"
+    },
+    {
+        "domain": ".qq.com",
+        "expiry": 1496444553,
+        "httpOnly": false,
+        "name": "webwx_data_ticket",
+        "path": "/",
+        "secure": false,
+        "value": "gScYSBQaDBUkRQtT4EGxw2ZL"
+    },
+    {
+        "domain": ".wx2.qq.com",
+        "expiry": 1811761353,
+        "httpOnly": false,
+        "name": "webwx_auth_ticket",
+        "path": "/",
+        "secure": false,
+        "value": "CIsBEK2q2bEJGoABJmfyuqtgusonrHHTYF/axEHo2THhTzlaxBkTgb+AfUT3dtp2Z2S7hX6s6l/OIWTWyBUnsOU7cMBT4sV/XySoRCpVmfQN1WUwmUpETNPdq2u9WFjhSE+lZ+0Am1dSD3jv3BQVAbeU4Xm3oLmgyGdhKDNNj22Yo6FsuWPa+oKQKIA="
+    },
+    {
+        "domain": "wx2.qq.com",
+        "expiry": 1496574154,
+        "httpOnly": false,
+        "name": "last_wxuin",
+        "path": "/",
+        "secure": false,
+        "value": "330699621"
+    },
+    {
+        "domain": "wx2.qq.com",
+        "expiry": 1496574154,
+        "httpOnly": false,
+        "name": "login_frequency",
+        "path": "/",
+        "secure": false,
+        "value": "2"
+    }
+]

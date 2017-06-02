@@ -1,0 +1,37 @@
+{
+  "name": "wechat-chat-robot",
+  "version": "1.0.0",
+  "description": "a wechat robot base on wechaty",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ts-node -- ./index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zoe",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "wechaty": "^0.8.90"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.23",
+    "nodemon": "^1.11.0",
+    "qrcode-terminal": "^0.11.0",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoexx/wechat-chat-robot.git"
+  },
+  "keywords": [
+    "wechat",
+    "nodejs",
+    "robot",
+    "terminal"
+  ],
+  "bugs": {
+    "url": "https://github.com/zoexx/wechat-chat-robot/issues"
+  }
+}
