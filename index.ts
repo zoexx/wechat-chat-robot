@@ -21,8 +21,13 @@ import {
   Config,
   Contact,
   Wechaty,
+  Message,
+  FriendRequest,
   log,
 }           from 'wechaty'
+
+import updateContactData from './tasks/updateContactData'
+// import updateRoomData from './tasks/updateRoomData'
 
 const welcome = `
 Please wait... I'm trying to login in...
@@ -51,6 +56,58 @@ bot
   }
   console.log(`${url}\n[${code}] Scan QR Code in above url to login: `)
 })
+.on('friend', async function (contact: Contact, request: FriendRequest) {
+  if(request){
+      if(request.hello !== 'lalala'){
+        console.log(`Request from ${contact.name()} : ${request.hello} , will not be accept automatic.`)
+        return
+      }
+
+      let result = await request.accept()
+      if(result){
+          console.log(`Request from ${contact.name()} is accept succesfully!`)
+          contact.say(`Hi~ 我是zoe的机器人 \n 回复 666 加入组织哟😘`)
+      } else{
+          console.log(`Request from ${contact.name()} failed to accept!`)
+      }
+  } else {
+      console.log(`new friendship confirmed with ${contact.name()}`)
+  }
+})
+.on('message', (message: Message) => {
+  console.log(`message ${message} received`)
+  // console.log(`message type ${message.type()}`)
+  // console.log(`message type ${message.typeApp()}`)
+  console.log(`message type ${message.getSenderString()}`)
+  console.log(`message type ${message.getContentString()}`)
+  if( message.content() === '666' ){
+    message.say('welcome')
+  }
+})
+.on('room-join', function(this, room, inviteeList, inviter) {
+  log.info( 'Bot', 'EVENT: room-join - Room %s got new member %s, invited by %s',
+            room.topic(),
+            inviteeList.map(c => c.name()).join(','),
+            inviter.name(),
+          )
+})
+.on('room-leave', function(this, room, leaverList) {
+  log.info('Bot', 'EVENT: room-leave - Room %s lost member %s',
+                  room.topic(),
+                  leaverList.map(c => c.name()).join(','),
+              )
+})
+.on('room-topic', function(this, room, topic, oldTopic, changer) {
+  try {
+    log.info('Bot', 'EVENT: room-topic - Room %s change topic to %s by member %s',
+                    oldTopic,
+                    topic,
+                    changer.name(),
+                )
+  } catch (e) {
+    log.error('Bot', 'room-topic event exception: %s', e.stack)
+  }
+})
 
 bot.init()
 .catch(e => {
@@ -64,65 +121,5 @@ bot.init()
  */
 async function main() {
   updateContactData()
-}
-
-
-/**
- * 更新/收集 通讯录数据
- * 
- */
-async function updateContactData() {
-  const contactList = await Contact.findAll()
-
-  log.info('Bot', '#######################')
-  log.info('Bot', 'Contact number: %d\n', contactList.length)
-  log.info('Bot', 'I will save the contact info at ./data/contact.json')
-  log.info('Bot', 'deal data ...')
-
-  let contactDataList = [] ;
-
-  for (let i = 0; i < contactList.length; i++) {
-    const contact = contactList[i]
-
-    if (!contact.weixin()) {
-      await contact.refresh()
-    }
-
-    let contactData = {
-      id : contact.id,
-      weixin : contact.weixin(),
-      name : contact.name(),
-      isStranger : contact.stranger(),
-      isStar : contact.star(),
-      gender : contact.gender(),
-      province : contact.province(),
-      city : contact.city(),
-      alias : contact.alias(),
-      isOfficial : false ,
-      isSpecial : false ,
-      isPersonal : false ,
-    }
-
-    if (contact.official()) {
-      log.info('Bot', `official ${i}: ${contact}`)
-      contactData.isOfficial = true
-    }
-    if (contact.special()){
-      log.info('Bot', `special ${i}: ${contact.name()}`)
-      contactData.isSpecial = true
-    }
-    if (contact.personal()){
-      log.info('Bot', `personal ${i}: ${contact.get('name')} : ${contact.id}`)
-      contactData.isPersonal = true
-    }
-
-    contactDataList.push(contactData)
-  }
-
-
-  writeFile( './data/contact.json' , JSON.stringify( contactDataList ) , 'utf8' , function(err){
-    if (err) throw err
-    console.log('The file has been saved!')
-  })
-
+  // updateRoomData()
 }
