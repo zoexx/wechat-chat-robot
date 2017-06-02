@@ -34,7 +34,7 @@ const welcome = `
 Please wait... I'm trying to login in...
 `
 
-const HELPER_CONTACT_NAME = '刘文超'
+const HELPER_CONTACT_NAME = '素素素素素'
 
 console.log(welcome)
 const bot = Wechaty.instance({ profile: Config.DEFAULT_PROFILE })
