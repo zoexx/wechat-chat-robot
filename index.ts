@@ -69,7 +69,9 @@ bot
       let result = await request.accept()
       if(result){
           console.log(`Request from ${contact.name()} is accept succesfully!`)
-          contact.say(`Hi~ 我是zoe的机器人 \n 回复 666 加入组织哟😘`)
+          setTimeout(function() {
+            contact.say(`Hi~ 我是zoe的机器人 \n 回复 666 加入组织哟😘`)
+          }, 1000);
       } else{
           console.log(`Request from ${contact.name()} failed to accept!`)
       }
